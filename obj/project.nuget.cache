@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CfrZJXXXQ4gnZ9atryWG5qoBHxz/QzEr1OzTtJmOFAgy2IZvwPXozuDtZDcSGGS5ktTS+rwK5bbg8E2a+65Zkw==",
+  "dgSpecHash": "HMMEcH4hJLQal7oYeX+54vPgSJBt8RLURGVBpYCPAige04F74M2oQPEF/Lhi0YXHMV7BXgAyKmgbW6u5jEFXPA==",
   "success": true,
-  "projectFilePath": "/home/austind/Code/C#/Api/PictureExchangeApi/PictureExchangeApi.csproj",
+  "projectFilePath": "/home/austind/Code/C#/Apis/PictureExchangeApi/PictureExchangeApi.csproj",
   "expectedPackageFiles": [
     "/home/austind/.nuget/packages/microsoft.aspnetcore.openapi/7.0.1/microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "/home/austind/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using System.Text;
+using System.Linq;
 //using System.Drawing;
 //using System.Drawing.Imaging;
 
@@ -14,12 +15,16 @@ namespace PictureExchangeApi.Controllers;
 public class PictureSend : ControllerBase {
     private string EnvDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
     [HttpPost("{userName}/{passwd}")]
-    public void Post(string userName, string passwd,[FromBody] Img res) {
+    [Consumes("multipart/form-data")]
+    public void psend(string userName, string passwd, [FromForm]IFormFile pho) {
         
         Console.WriteLine("New Image Post");
-        //Console.WriteLine(res.imgb64);
         
-        string imageBase64 = res.imgb64;
+        //Console.WriteLine(res.imgb64);
+        MemoryStream imgMs = new MemoryStream();
+        pho.CopyTo(imgMs);
+        byte[] imgBytes = imgMs.ToArray();
+        //string imageBase64 = res.imgb64;
         //imageBase64 = imageBase64.Replace('-','/');
         if(!Directory.Exists(Path.Join(EnvDirectory,"imgs"))) Directory.CreateDirectory(Path.Join(EnvDirectory,"imgs"));
         Console.WriteLine(userName);
@@ -34,11 +39,11 @@ public class PictureSend : ControllerBase {
             file.Close();
         }
         //converts base64 to image, then compress, then back to base64
-        byte[] bytes = Convert.FromBase64String(imageBase64);
-        var image = Image.Load(bytes);
+        
+        var image = Image.Load(imgBytes);
         MemoryStream ms = new MemoryStream();
         image.Save(ms, new JpegEncoder {Quality = 60});
-        imageBase64 = Convert.ToBase64String(ms.ToArray());
+        string imageBase64 = Convert.ToBase64String(ms.ToArray());
         //writes the base64
         System.IO.File.WriteAllText(Path.Join(EnvDirectory,"imgs", userName,"image") + ".txt", imageBase64);
         //Writes a .json file of the date the image was received

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/austind/Code/C#/Api/PictureExchangeApi/PictureExchangeApi.csproj": {}
+    "/home/austind/Code/C#/Apis/PictureExchangeApi/PictureExchangeApi.csproj": {}
   },
   "projects": {
-    "/home/austind/Code/C#/Api/PictureExchangeApi/PictureExchangeApi.csproj": {
+    "/home/austind/Code/C#/Apis/PictureExchangeApi/PictureExchangeApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/austind/Code/C#/Api/PictureExchangeApi/PictureExchangeApi.csproj",
+        "projectUniqueName": "/home/austind/Code/C#/Apis/PictureExchangeApi/PictureExchangeApi.csproj",
         "projectName": "PictureExchangeApi",
-        "projectPath": "/home/austind/Code/C#/Api/PictureExchangeApi/PictureExchangeApi.csproj",
+        "projectPath": "/home/austind/Code/C#/Apis/PictureExchangeApi/PictureExchangeApi.csproj",
         "packagesPath": "/home/austind/.nuget/packages/",
-        "outputPath": "/home/austind/Code/C#/Api/PictureExchangeApi/obj/",
+        "outputPath": "/home/austind/Code/C#/Apis/PictureExchangeApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/austind/.nuget/NuGet/NuGet.Config"
